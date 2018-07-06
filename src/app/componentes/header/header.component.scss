@@ -1,0 +1,32 @@
+.nav{
+  width: 100vw;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.125);
+  background: white;
+}
+
+.list-items{
+  list-style: none;
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+}
+
+.list-items .items:last-child{
+  border-right: none;
+}
+.items{
+  padding: 10px 20px;
+  border-right: rgba(0,0,0,0.25) solid 1px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s all;
+  &:hover{
+    cursor: pointer;
+    color: red;
+    background: black;
+  }
+}
+
+.selected{
+  border-bottom: 2px solid black;
+}
