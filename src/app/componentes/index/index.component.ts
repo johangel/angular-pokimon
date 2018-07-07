@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PokemonsService} from './../../services/pokemons.service';
 import {WebStorageService} from './../../services/web-storage.service';
 import {PokemonInfoThumbnailComponent} from '../../subcomponentes/pokemon-info-thumbnail/pokemon-info-thumbnail.component';
+import {MovementsListComponent} from '../../subcomponentes/movements-list/movements-list.component';
 declare const $: any;
 @Component({
   selector: 'app-index',
@@ -12,11 +13,13 @@ export class IndexComponent implements OnInit {
 
   constructor(
     private pokemonService: PokemonsService,
-    private Local: WebStorageService
+    private Local: WebStorageService,
+    // private MovementsListComponent:MovementsListComponent
   ) { }
 
   ListPokemons = []
   pokemonThumbnail = {}
+  ListMovements = []
   Loading = false;
   ngOnInit() {
     this.GetAllPokemons()
@@ -50,6 +53,7 @@ export class IndexComponent implements OnInit {
       respuesta=>{
         console.log(respuesta)
         this.pokemonThumbnail = respuesta
+        this.ListMovements = respuesta.moves
         this.Loading= false;
       }, error=>{
         this.Loading= false;

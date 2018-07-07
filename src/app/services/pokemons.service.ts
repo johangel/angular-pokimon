@@ -20,11 +20,15 @@ export class PokemonsService {
   }
 
   getPokemonSprite(){
-    return this.http.get('url').map((response: Response) => response.json)
+    return this.http.get('url').map((response: Response) => response.json())
   }
 
   GetSinglePokemon(urlPokemon){
     return this.http.get(urlPokemon).map((response: Response) => response.json())
+  }
+
+  getSingleMove(UrlMove){
+    return this.http.get(UrlMove).map((response: Response) => response.json())
   }
 
 

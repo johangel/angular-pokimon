@@ -1,26 +1,27 @@
 <div>
-<div>
-  <div class="mt col-md-5">
-    <app-pokemon-info-thumbnail [Loading]="Loading"  [pokemonThumbnail]="pokemonThumbnail"></app-pokemon-info-thumbnail>
-  </div>
-  <div class="mt col-md-7">
-    <div class="tableHolder">
-      <table class="display table responsive no-wrap" width="100%" id="PokemonTable">
-        <thead>
-          <tr>
-            <th class="text-center">#</th>
-            <th class="text-center">Nombre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr (click)="GetSinglePokemon(Pokemon.url)" class="selectableRows" *ngFor="let Pokemon of ListPokemons; let i = index">
-            <td class="text-center">{{i}}</td>
-            <td class="text-center">{{Pokemon.name}}</td>
-          </tr>
-        </tbody>
-      </table>
+  <div>
+    <div class="mt col-md-6">
+      <div class="tableHolder">
+        <table class="display table responsive no-wrap" width="100%" id="PokemonTable">
+          <thead>
+            <tr>
+              <th class="text-center">#</th>
+              <th class="text-center">Nombre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr (click)="GetSinglePokemon(Pokemon.url)" class="selectableRows" *ngFor="let Pokemon of ListPokemons; let i = index">
+              <td class="text-center">{{i}}</td>
+              <td class="text-center">{{Pokemon.name}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="mt col-md-6">
+      <app-pokemon-info-thumbnail [Loading]="Loading"  [pokemonThumbnail]="pokemonThumbnail"></app-pokemon-info-thumbnail>
+      <app-movements-list [movementList]="ListMovements"></app-movements-list>
     </div>
   </div>
-</div>
 
 </div>

@@ -1,5 +1,5 @@
-<app-loader *ngIf="Loading"></app-loader>
 <div [ngStyle]="{'opacity':Loading ? '0.2' : '1' }" class="pokemonDisplay">
+  <app-loader *ngIf="Loading"></app-loader>
   <div class="displayHeader">
     <h2 class="pokemonName">{{pokemonThumbnail.name}}</h2>
     <h2 >#{{pokemonThumbnail.id}}</h2>

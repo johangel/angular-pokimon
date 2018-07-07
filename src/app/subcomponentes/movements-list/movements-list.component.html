@@ -1,3 +1,18 @@
-<p>
-  movements-list works!
-</p>
+<!-- <p *ngFor="let movement of movementList">
+  {{movement.move.name}}
+</p> -->
+<div class="mainContainer mt mb">
+  <h2 class="container-title">Lista de movimientos</h2>
+  <hr>
+  <div class="mainSection mt">
+    <div class="moveListContainer">
+      <ul style="padding: 0 10px;" class="listMoves">
+        <li (click)="getSingleMove(movement.move.url)" class="single_move" *ngFor="let movement of movementList">{{movement.move.name}}</li>
+      </ul>
+    </div>
+    <div style="padding: 0 15px;" class="MovementDescription">
+      <h3 class="container-subtitle">{{SingleMove.name}}</h3>
+      <p class="movesEffect" *ngFor="let efect of SingleMove.effect_entries">{{efect.effect}}</p>
+    </div>
+  </div>
+</div>

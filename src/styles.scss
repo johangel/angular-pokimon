@@ -6,6 +6,10 @@ body{
   padding: 0;
   background: rgba(0,0,0,0.025);
 }
+hr{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 h2,h1,h3{
   margin: 0;
 }
@@ -14,10 +18,31 @@ h2,h1,h3{
 }
 ul{
   list-style: none;
+  padding: 0;
 }
 .mt{
  margin-top: 15px;
 }
+.mb{
+  margin-bottom: 15px;
+}
 .hidden{
   display: none;
+}
+.mainContainer{
+  padding: 10px;
+  background: white;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.125);
+}
+.container-title{
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 900;
+}
+.container-subtitle{
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: lighter;
 }

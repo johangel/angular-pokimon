@@ -1,0 +1,31 @@
+.mainSection{
+  display: flex;
+}
+
+.MovementDescription{
+  flex-grow: 1;
+}
+
+ul{
+  overflow: scroll;
+  max-height: 200px;
+  border-left: rgba(0,0,0,0.2) 3px solid;
+}
+
+.single_move{
+  padding: 5px 10px;
+  text-align: center;
+  width: 100px;
+  transition: 0.3s all;
+  border-left: 3px white solid;
+  &:hover{
+    border-left: 3px #337ab7 solid;
+    color: #337ab7;
+    cursor: pointer;
+  }
+}
+
+.movesEffect{
+  margin-top: 10px;
+  text-align: center;
+}
