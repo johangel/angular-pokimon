@@ -4,6 +4,7 @@
 
 .MovementDescription{
   flex-grow: 1;
+  padding: 0 20px;
 }
 
 ul{
@@ -23,6 +24,13 @@ ul{
     color: #337ab7;
     cursor: pointer;
   }
+}
+
+.MoveDescription{
+  padding: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center
 }
 
 .movesEffect{

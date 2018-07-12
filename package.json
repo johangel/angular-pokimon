@@ -25,6 +25,7 @@
     "@angular/router": "^5.2.0",
     "angular-webstorage-service": "^1.0.2",
     "bootstrap": "^3.3.7",
+    "chart.js": "^2.7.2",
     "core-js": "^2.4.1",
     "datatables.net": "^1.10.19",
     "datatables.net-bs": "^1.10.19",

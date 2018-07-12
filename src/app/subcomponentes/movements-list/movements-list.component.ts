@@ -17,15 +17,16 @@ export class MovementsListComponent implements OnChanges, OnInit {
   ngOnInit(){
     $('.listMoves').niceScroll({
       cursorcolor:'#337AB7'
-    }
-    );
+    });
   }
 
   SingleMove = {}
+  finalFlavorText = {}
+  MoveLoaded = false
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-    console.log(this.movementList)
-    console.log('ocurrio un cambio')
-    console.log(changes)
+    $('.listMoves').niceScroll({
+      cursorcolor:'#337AB7'
+    });
   }
 
   getSingleMove(url){
@@ -34,6 +35,8 @@ export class MovementsListComponent implements OnChanges, OnInit {
         console.log(respuesta)
         this.SingleMove = respuesta
         this.setEffectForEffectChanges()
+        this.setFlavorText()
+        this.MoveLoaded = true
       })
   }
 
@@ -48,4 +51,14 @@ export class MovementsListComponent implements OnChanges, OnInit {
     }
   }
 
+  setFlavorText(){
+    if(this.SingleMove['flavor_text_entries'][0]){
+      for(var i = 0; i<this.SingleMove['flavor_text_entries'].length;i++){
+        if(this.SingleMove['flavor_text_entries'][i].language.name == 'en'){
+          this.finalFlavorText = this.SingleMove['flavor_text_entries'][i]
+        }
+      }
+    }
+    console.log(this.finalFlavorText)
+  }
 }

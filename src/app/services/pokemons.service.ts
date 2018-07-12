@@ -15,7 +15,7 @@ export class PokemonsService {
   constructor(private http:Http) { }
 
   getAllPokemon(): any{
-    return this.http.get(this.url + 'pokemon/?limit=800&offset=20')
+    return this.http.get(this.url + 'pokemon/?limit=949')
     .map((response: Response) => response.json())
   }
 
@@ -29,6 +29,10 @@ export class PokemonsService {
 
   getSingleMove(UrlMove){
     return this.http.get(UrlMove).map((response: Response) => response.json())
+  }
+
+  getPokemonSpecies(UrlSpecie){
+    return this.http.get(UrlSpecie).map((response: Response) => response.json())
   }
 
 

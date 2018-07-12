@@ -1,22 +1,22 @@
-<div [ngStyle]="{'opacity':Loading ? '0.2' : '1' }" class="pokemonDisplay">
-  <app-loader *ngIf="Loading"></app-loader>
+<div [ngStyle]="{'opacity':_loading ? '0.2' : '1' }" class="pokemonDisplay">
+  <app-loader *ngIf="_loading"></app-loader>
   <div class="displayHeader">
     <h2 class="pokemonName">{{pokemonThumbnail.name}}</h2>
     <h2 >#{{pokemonThumbnail.id}}</h2>
   </div>
-  <div *ngIf="!pokemonThumbnail.sprites.front_default" class="emptyFieldMessage">
-    Seleccion un pokemon para ver sus especificaciones
+  <div *ngIf="!Loaded" class="emptyFieldMessage">
+    Choose a pokemon from the table.
   </div>
-  <div class="display-content">
-    <div *ngIf="pokemonThumbnail.sprites.front_default" class="pokemon_info">
-      <strong>tipo(s)</strong>: <span *ngFor="let type of pokemonThumbnail.types">{{type.type.name}} </span> <br>
-      <strong>altura</strong>: {{pokemonThumbnail.height}} fts <br>
-      <strong>peso</strong>: {{pokemonThumbnail.weight}} lbs <br>
-      <strong>Experiencia Base</strong>: {{pokemonThumbnail.base_experience}} <br>
-      <strong>Estadisticas</strong>: <br>
-      <ul>
-        <li *ngFor="let stat of pokemonThumbnail.stats">{{stat.base_stat}}, {{stat.stat.name}}</li>
-      </ul>
+  <div  class="display-content">
+    <div class="pokemon_info">
+      <div class="PokemonDescription">{{PokemonSpecie.flavor_text}}</div> <br>
+      <strong>Type(s)</strong>: <span *ngFor="let type of pokemonThumbnail.types">{{type.type.name}} </span> <br>
+      <strong>Height</strong>: {{pokemonThumbnail.height}} fts <br>
+      <strong>Weight</strong>: {{pokemonThumbnail.weight}} lbs <br>
+      <strong>Base experience</strong>: {{pokemonThumbnail.base_experience}} <br>
+      <div class="chart-container mt" style="position: relative; height:auto; width:100%">
+        <canvas id="myChart"></canvas>
+      </div>
     </div>
     <div class="pokemon_picture">
       <img class="sprite"  src="{{pokemonThumbnail.sprites.front_default}}" alt="">

@@ -38,12 +38,9 @@ export class IndexComponent implements OnInit {
     }else{
       this.ListPokemons  = this.Local.GetValue('ListPokemons')
     }
-    console.log($('#PokemonTable'))
     setTimeout(function(){
       $('#PokemonTable').DataTable();
       }, 1);
-
-
   }
 
   GetSinglePokemon(url){

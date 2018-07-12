@@ -2,7 +2,7 @@
   {{movement.move.name}}
 </p> -->
 <div class="mainContainer mt mb">
-  <h2 class="container-title">Lista de movimientos</h2>
+  <h2 class="container-title">Movement's List</h2>
   <hr>
   <div class="mainSection mt">
     <div class="moveListContainer">
@@ -10,9 +10,22 @@
         <li (click)="getSingleMove(movement.move.url)" class="single_move" *ngFor="let movement of movementList">{{movement.move.name}}</li>
       </ul>
     </div>
-    <div style="padding: 0 15px;" class="MovementDescription">
+    <div *ngIf="MoveLoaded" style="padding: 0 15px;" class="MovementDescription">
       <h3 class="container-subtitle">{{SingleMove.name}}</h3>
+      <p class="MoveDescription">{{finalFlavorText.flavor_text}}</p>
       <p class="movesEffect" *ngFor="let efect of SingleMove.effect_entries">{{efect.effect}}</p>
+      <div class="moveStatsSection">
+        <div class="MoveStats">
+          <strong>Id movement</strong>: {{SingleMove.id}} <br>
+          <strong>Cccuracy</strong>:  {{SingleMove.accuracy}} <br>
+          <strong>Power</strong>: {{SingleMove.power}} <br>
+          <strong>PP</strong>: {{SingleMove.pp}} <br>
+          <strong>Effect Chance</strong>: {{SingleMove.effect_chance}} <br>
+        </div>
+        <div>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>
